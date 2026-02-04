@@ -2,16 +2,26 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './loveMatch.module.css';
 
 interface Card {
   id: number;
-  emoji: string;
+  image: string;
   matched: boolean;
   flipped: boolean;
 }
 
-const emojis = ['💕', '💋', '🌹', '💐', '🎁', '💝', '💑', '👫'];
+const images = [
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.08 PM.jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.08 PM (1).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.08 PM (2).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.08 PM (3).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.08 PM (4).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.08 PM (5).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.09 PM.jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.09 PM (1).jpeg',
+];
 
 export default function LoveMatchGame() {
   const [cards, setCards] = useState<Card[]>([]);
@@ -25,11 +35,11 @@ export default function LoveMatchGame() {
   }, []);
 
   const initializeGame = () => {
-    const shuffled = [...emojis, ...emojis]
+    const shuffled = [...images, ...images]
       .sort(() => Math.random() - 0.5)
-      .map((emoji, idx) => ({
+      .map((image, idx) => ({
         id: idx,
-        emoji,
+        image,
         matched: false,
         flipped: false,
       }));
@@ -43,7 +53,7 @@ export default function LoveMatchGame() {
   useEffect(() => {
     if (flipped.length === 2) {
       const [first, second] = flipped;
-      if (cards[first].emoji === cards[second].emoji) {
+      if (cards[first].image === cards[second].image) {
         setMatched([...matched, first, second]);
         setFlipped([]);
       } else {
@@ -98,7 +108,9 @@ export default function LoveMatchGame() {
             >
               <div className={styles.cardInner}>
                 <div className={styles.cardFront}>?</div>
-                <div className={styles.cardBack}>{card.emoji}</div>
+                <div className={styles.cardBack}>
+                  <img src={card.image} alt="Memory card" className={styles.cardImage} />
+                </div>
               </div>
             </div>
           ))}

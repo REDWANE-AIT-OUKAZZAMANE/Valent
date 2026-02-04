@@ -70,6 +70,7 @@
   font-weight: bold;
   border: 2px solid #ff69b4;
   backface-visibility: hidden;
+  overflow: hidden;
 }
 
 .cardFront {
@@ -80,6 +81,13 @@
 .cardBack {
   background: white;
   transform: rotateY(180deg);
+  padding: 0;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .wonMessage {
