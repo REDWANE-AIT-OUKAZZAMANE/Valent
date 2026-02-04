@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
-const isGithubActions = process.env.GITHUB_ACTIONS === "true";
-const repository = process.env.GITHUB_REPOSITORY?.includes("/")
-  ? process.env.GITHUB_REPOSITORY.split("/")[1]
+const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
+const repositoryEnv = process.env.GITHUB_REPOSITORY ?? "";
+const repository = repositoryEnv.includes("/")
+  ? repositoryEnv.split("/")[1]
   : "";
-const basePath = isGithubActions && repository ? `/${repository}` : "";
+const basePath = isGitHubActions && repository ? `/${repository}` : "";
 const assetPrefix = basePath;
 
 const nextConfig = {
