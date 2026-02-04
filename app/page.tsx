@@ -31,9 +31,9 @@ export default function Home() {
       "Wrong button ❌",
       "Are you sure 🤔?",
       "But what if 🫣?",
-      "You're breaking my heart 💔",
+      "You&apos;re breaking my heart 💔",
       "Pwetty please 🥺👉👈",
-      "Can't catch up? 😂"
+      "Can&apos;t catch up? 😂"
     ]
 
     const randomIndex = Math.floor(Math.random() * phrases.length);

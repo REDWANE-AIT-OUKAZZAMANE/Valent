@@ -109,7 +109,7 @@ export default function LoveMatchGame() {
               <div className={styles.cardInner}>
                 <div className={styles.cardFront}>?</div>
                 <div className={styles.cardBack}>
-                  <img src={card.image} alt="Memory card" className={styles.cardImage} />
+                  <Image src={card.image} alt="Memory card" fill className={styles.cardImage} />
                 </div>
               </div>
             </div>

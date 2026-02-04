@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './gallery.module.css';
 
 interface Photo {
@@ -66,7 +67,7 @@ export default function PhotoGallery() {
                 className={styles.photoCard}
                 onClick={() => setSelectedPhoto(photo)}
               >
-                <img src={photo.src} alt={photo.alt} className={styles.photoImg} />
+                <Image src={photo.src} alt={photo.alt} fill className={styles.photoImg} />
                 <div className={styles.overlay}>
                   <button
                     className={styles.deleteBtn}
@@ -93,7 +94,7 @@ export default function PhotoGallery() {
             >
               ✕
             </button>
-            <img src={selectedPhoto.src} alt={selectedPhoto.alt} className={styles.modalImg} />
+            <Image src={selectedPhoto.src} alt={selectedPhoto.alt} fill className={styles.modalImg} />
           </div>
         </div>
       )}
