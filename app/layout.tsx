@@ -17,7 +17,10 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="apple-touch-icon" ></link>
       </head>
-      <body>{children}</body>
+      <body>
+        <div className="made-with">Made with ♡ by Doudi</div>
+        {children}
+      </body>
     </html>
   );
 }
