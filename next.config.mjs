@@ -2,10 +2,8 @@
 const useBasePath = process.env.GITHUB_ACTIONS === "true";
 const repositoryEnv = process.env.GITHUB_REPOSITORY ?? "";
 const repositoryParts = repositoryEnv.split("/");
-const repository =
-  repositoryParts.length > 1 ? repositoryParts[1] : repositoryParts[0];
-const basePath =
-  useBasePath && repository.length > 0 ? `/${repository}` : "";
+const repository = repositoryParts.length > 1 ? repositoryParts[1] : "";
+const basePath = useBasePath && repository ? `/${repository}` : "";
 
 const nextConfig = {
   output: "export",
