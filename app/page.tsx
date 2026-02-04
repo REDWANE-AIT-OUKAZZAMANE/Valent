@@ -32,7 +32,7 @@ export default function Home() {
     const phrases = [
       "Wrong button ❌",
       "Are you sure 🤔?",
-      "But what if 🫣?",
+      "But what if 🤔?",
       "You're breaking my heart 💔",
       "Pwetty please 🥺👉👈",
       "Can't catch up? 😂"
