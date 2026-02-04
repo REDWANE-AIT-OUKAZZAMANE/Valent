@@ -54,7 +54,7 @@ export default function PhotoGallery() {
     <div className={styles.container}>
       <div className={styles.header}>
         <Link href="/">← Go Back</Link>
-        <h1>📸 Our Love Story 📸</h1>
+        <h1>📸 Our Story 📸</h1>
       </div>
 
       {photos.length > 0 && (
