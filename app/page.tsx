@@ -55,7 +55,7 @@ export default function Home() {
       <div className="navbar">
         <Link href="/love-language" className="nav-link">Love Language Quiz 💬</Link>
         <Link href="/love-match" className="nav-link">Match Game 🎮</Link>
-        <Link href="/messages" className="nav-link">Messages 💌</Link>
+        {/* <Link href="/messages" className="nav-link">Messages 💌</Link> */}
         <Link href="/gallery" className="nav-link">Gallery 📸</Link>
       </div>
       <div className="countdown-timer">
@@ -77,7 +77,7 @@ export default function Home() {
           ) : (
             <div>
               <p>♡ {customQuestion} ♡</p>
-              <button className="customize-btn" onClick={() => setIsCustomizing(true)}>✎ Customize</button>
+              {/* <button className="customize-btn" onClick={() => setIsCustomizing(true)}>✎ Customize</button> */}
             </div>
           )}
         </div>
