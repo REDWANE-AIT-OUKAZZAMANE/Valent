@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
-const useBasePath = process.env.GITHUB_ACTIONS === "true";
+const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
 const repositoryEnv = process.env.GITHUB_REPOSITORY ?? "";
-const repositoryParts = repositoryEnv.split("/");
-const repository = repositoryParts.length > 1 ? repositoryParts[1] : "";
-const basePath = useBasePath && repository ? `/${repository}` : "";
+const [, repository = ""] = repositoryEnv.split("/");
+const basePath = isGitHubActions && repository ? `/${repository}` : "";
 
 const nextConfig = {
   output: "export",
