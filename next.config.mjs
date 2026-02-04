@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
 const repositoryEnv = process.env.GITHUB_REPOSITORY ?? "";
-const repository = repositoryEnv.includes("/")
-  ? repositoryEnv.split("/")[1]
-  : "";
+const repository = repositoryEnv.split("/").filter(Boolean).pop() ?? "";
 const basePath = isGitHubActions && repository ? `/${repository}` : "";
 
 const nextConfig = {
