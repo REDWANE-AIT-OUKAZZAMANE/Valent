@@ -68,17 +68,6 @@ export default function PhotoGallery() {
                 onClick={() => setSelectedPhoto(photo)}
               >
                 <Image src={photo.src} alt={photo.alt} fill className={styles.photoImg} />
-                <div className={styles.overlay}>
-                  <button
-                    className={styles.deleteBtn}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      removePhoto(photo.id);
-                    }}
-                  >
-                    🗑️
-                  </button>
-                </div>
               </div>
             ))}
           </div>
