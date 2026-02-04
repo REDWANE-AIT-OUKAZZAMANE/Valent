@@ -33,9 +33,9 @@ export default function Home() {
       "Wrong button ❌",
       "Are you sure 🤔?",
       "But what if 🫣?",
-      "You&apos;re breaking my heart 💔",
+      "You're breaking my heart 💔",
       "Pwetty please 🥺👉👈",
-      "Can&apos;t catch up? 😂"
+      "Can't catch up? 😂"
     ]
 
     const randomIndex = Math.floor(Math.random() * phrases.length);
@@ -68,7 +68,7 @@ export default function Home() {
         </button>
       </div>
       <div className="countdown-timer">
-        <p>Valentine&apos;s Day in: {countdown.days}d {countdown.hours}h {countdown.minutes}m {countdown.seconds}s</p>
+        <p>{"Valentine's Day in: "}{countdown.days}d {countdown.hours}h {countdown.minutes}m {countdown.seconds}s</p>
       </div>
       <section>
         <div>
