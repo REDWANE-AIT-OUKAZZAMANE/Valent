@@ -22,7 +22,7 @@ const initialPhotos = [
   '/pics/WhatsApp Image 2026-02-04 at 2.38.09 PM (2).jpeg',
   '/pics/WhatsApp Image 2026-02-04 at 2.38.09 PM (3).jpeg',
   '/pics/WhatsApp Image 2026-02-04 at 2.38.09 PM (4).jpeg',
-  '/pics/WhatsApp Image 2026-02-04 at 2.38.09 PM (5).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.47.27 PM.jpeg',
   '/pics/WhatsApp Image 2026-02-04 at 2.38.09 PM (6).jpeg',
   '/pics/WhatsApp Image 2026-02-04 at 2.38.09 PM (7).jpeg',
   '/pics/WhatsApp Image 2026-02-04 at 2.38.10 PM.jpeg',
