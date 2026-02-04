@@ -2,7 +2,7 @@
 const isGithubActions = process.env.GITHUB_ACTIONS === "true";
 const repository = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "";
 const basePath = isGithubActions && repository ? `/${repository}` : "";
-const assetPrefix = basePath ? `${basePath}/` : "";
+const assetPrefix = basePath;
 
 const nextConfig = {
   output: "export",
