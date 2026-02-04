@@ -34,13 +34,15 @@ export default function PhotoGallery() {
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
   useEffect(() => {
-    // Load initial photos from public/pics folder
+    // Load initial photos from public/pics folder and scramble them
     const initialPhotoObjects: Photo[] = initialPhotos.map((src, index) => ({
       id: index,
       src,
       alt: `Memory ${index + 1}`,
     }));
-    setPhotos(initialPhotoObjects);
+    // Scramble the photos randomly
+    const scrambled = initialPhotoObjects.sort(() => Math.random() - 0.5);
+    setPhotos(scrambled);
   }, []);
 
   const removePhoto = (id: number) => {
