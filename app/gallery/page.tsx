@@ -83,7 +83,7 @@ export default function PhotoGallery() {
             >
               ✕
             </button>
-            <Image src={selectedPhoto.src} alt={selectedPhoto.alt} fill className={styles.modalImg} />
+            <img src={selectedPhoto.src} alt={selectedPhoto.alt} className={styles.modalImg} />
           </div>
         </div>
       )}
