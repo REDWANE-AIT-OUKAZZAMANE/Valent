@@ -138,6 +138,27 @@ p {
   box-shadow: 0 4px 12px rgba(255, 20, 147, 0.3);
 }
 
+.music-toggle {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff69b4, #ff1493);
+  color: white;
+  transition: all 0.3s;
+}
+
+.music-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 20, 147, 0.3);
+}
+
+.music-toggle:active {
+  transform: scale(0.98);
+}
+
 .countdown-timer {
   text-align: center;
   color: #ff1493;
