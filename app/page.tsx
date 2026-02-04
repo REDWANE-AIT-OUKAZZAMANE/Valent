@@ -59,7 +59,7 @@ export default function Home() {
         <Link href="/gallery" className="nav-link">Gallery 📸</Link>
       </div>
       <div className="countdown-timer">
-        <p>Valentine's Day in: {countdown.days}d {countdown.hours}h {countdown.minutes}m {countdown.seconds}s</p>
+        <p>Valentine&apos;s Day in: {countdown.days}d {countdown.hours}h {countdown.minutes}m {countdown.seconds}s</p>
       </div>
       <section>
         <div>
