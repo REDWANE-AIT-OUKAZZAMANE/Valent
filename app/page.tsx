@@ -3,6 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useCountdown } from "./util/useCountdown";
+import { useSound } from "./util/useSound";
+import AnimatedHearts from "./util/AnimatedHearts";
 
 interface Coordinates {
   x: string;
@@ -13,6 +16,10 @@ export default function Home() {
   const [image, setImage] = useState(false);
   const [coord, setCoords] = useState<Coordinates | null>(null);
   const [response, setResponse] = useState('No');
+  const [customQuestion, setCustomQuestion] = useState('Will you be my Valentine?');
+  const [isCustomizing, setIsCustomizing] = useState(false);
+  const countdown = useCountdown();
+  const { playDing } = useSound();
 
   const handleNoBtn = () => {
     const x = Math.random() * 60;
@@ -35,13 +42,44 @@ export default function Home() {
 
   const handleYesBtn = () => {
     setImage(!image);
+    playDing();
+  }
+
+  const handleCustomSubmit = () => {
+    setIsCustomizing(false);
   }
 
   return (
     <div className="container">
+      <AnimatedHearts />
+      <div className="navbar">
+        <Link href="/love-language" className="nav-link">Love Language Quiz 💬</Link>
+        <Link href="/love-match" className="nav-link">Match Game 🎮</Link>
+        <Link href="/messages" className="nav-link">Messages 💌</Link>
+        <Link href="/gallery" className="nav-link">Gallery 📸</Link>
+      </div>
+      <div className="countdown-timer">
+        <p>Valentine's Day in: {countdown.days}d {countdown.hours}h {countdown.minutes}m {countdown.seconds}s</p>
+      </div>
       <section>
         <div>
-          <p>♡ Will you be my Valentine? ♡</p>
+          {isCustomizing ? (
+            <div className="customize-form">
+              <input
+                type="text"
+                value={customQuestion}
+                onChange={(e) => setCustomQuestion(e.target.value)}
+                placeholder="Ask your own question..."
+                maxLength={100}
+              />
+              <button onClick={handleCustomSubmit}>Done ✓</button>
+            </div>
+          ) : (
+            <div>
+              <p>♡ {customQuestion} ♡</p>
+              <button className="customize-btn" onClick={() => setIsCustomizing(true)}>✎ Customize</button>
+            </div>
+          )}
         </div>
         <div className="img-container">
           {image ? (
