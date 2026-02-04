@@ -1,8 +1,7 @@
 'use client'
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import styles from './gallery.module.css';
 
 interface Photo {
@@ -11,10 +10,39 @@ interface Photo {
   alt: string;
 }
 
+const initialPhotos = [
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.08 PM.jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.08 PM (1).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.08 PM (2).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.08 PM (3).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.08 PM (4).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.08 PM (5).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.09 PM.jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.09 PM (1).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.09 PM (2).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.09 PM (3).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.09 PM (4).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.09 PM (5).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.09 PM (6).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.09 PM (7).jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.10 PM.jpeg',
+  '/pics/WhatsApp Image 2026-02-04 at 2.38.10 PM (1).jpeg',
+];
+
 export default function PhotoGallery() {
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    // Load initial photos from public/pics folder
+    const initialPhotoObjects: Photo[] = initialPhotos.map((src, index) => ({
+      id: index,
+      src,
+      alt: `Memory ${index + 1}`,
+    }));
+    setPhotos(initialPhotoObjects);
+  }, []);
 
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
