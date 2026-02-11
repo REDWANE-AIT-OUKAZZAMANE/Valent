@@ -17,7 +17,6 @@ export default function page() {
                     <p id="yay">💖 Yipee! 💖</p>
                     <div className="success-nav">
                         <Link href="/love-language" className="success-link">Take Love Language Quiz 💬</Link>
-                        <Link href="/messages" className="success-link">Send a Message 💌</Link>
                         <Link href="/gallery" className="success-link">Start a Gallery 📸</Link>
                     </div>
                 </section>

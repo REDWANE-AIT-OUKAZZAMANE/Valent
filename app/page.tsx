@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useCountdown } from "./util/useCountdown";
 import { useSound } from "./util/useSound";
-import { useMusic } from "./util/useMusic";
 import AnimatedHearts from "./util/AnimatedHearts";
 
 interface Coordinates {
@@ -21,7 +20,6 @@ export default function Home() {
   const [isCustomizing, setIsCustomizing] = useState(false);
   const countdown = useCountdown();
   const { playDing } = useSound();
-  const { isPlaying, toggleMusic } = useMusic();
 
   const handleNoBtn = () => {
     const x = Math.random() * 60;
@@ -59,13 +57,6 @@ export default function Home() {
         <Link href="/love-match" className="nav-link">Match Game 🎮</Link>
         {/* <Link href="/messages" className="nav-link">Messages 💌</Link> */}
         <Link href="/gallery" className="nav-link">Gallery 📸</Link>
-        <button 
-          className="nav-link music-toggle" 
-          onClick={toggleMusic}
-          title={isPlaying ? "Pause music" : "Play music"}
-        >
-          {isPlaying ? "🎵 Music ON" : "🔇 Music OFF"}
-        </button>
       </div>
       <div className="countdown-timer">
         <p>{"Valentine's Day in: "}{countdown.days}d {countdown.hours}h {countdown.minutes}m {countdown.seconds}s</p>
